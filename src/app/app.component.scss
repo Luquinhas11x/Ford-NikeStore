@@ -1,0 +1,203 @@
+.header{
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  box-shadow: 0 0 1em black;
+  width: 100%;
+}
+
+.nike-img{
+  margin-left: 5px;
+  height: 50px;
+}
+
+.links a{
+  padding: 5px 10px 5px 10px;
+  color: white;
+  text-decoration: none;
+  transition: .5s;
+}
+
+.border-left{
+  border-left: 1px solid white;
+}
+
+.links a:hover{
+  color: #b3ad9d;
+
+}
+
+.nike-button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nike-button i{
+  color: white;
+  transition: .5s;
+}
+
+.nike-button i:hover{
+  transform: rotate(90deg);
+}
+
+.all-content{
+  overflow-y: scroll;
+  height: 92vh;
+  width: 100%;
+  background-color: #F2F3F9;
+}
+
+.height{
+  width: 100%;
+}
+
+.search-input{
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  background-color: white;
+}
+
+.input-field:focus {
+  background-color: transparent;
+  color: white;
+}
+
+.input-field:focus+div {
+  color: white;
+}
+
+.icon {
+  padding: 10px;
+  position: absolute;
+  z-index: 100;
+}
+
+
+.icons {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+}
+
+.cancel {
+  margin-left: 91%;
+  font-size: 18px;
+}
+
+.cart-icon{
+  position: absolute;
+  color: white;
+  padding: 6px;
+  border-radius: 100px;
+  font-size: 24px;
+}
+
+.cart-icon:hover{
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.555);
+}
+
+.cart-products{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+.price-quantity{
+    display: flex;
+    flex-direction: row;
+   align-items: center;
+}
+
+.price-quantity h4{
+    font-size: 15px;
+}
+
+.cancel:hover{
+    cursor: pointer;
+    color: red;
+}
+
+.search-market{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+
+.icon-quantity{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.total {
+  position: absolute;
+  font-weight: 800;
+  font-size: 13px;
+  left: 12px;
+  top: -3px;
+}
+
+.empty-cart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.empty-cart p{
+  margin: 30px 0px 30px 0px;
+  text-align: center;
+}
+
+.empty-cart h3{
+  font-size: 30px;
+  text-align: center;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 2px;
+}
+
+.buttons p-button{
+  padding: 2px;
+}
+
+.total-price{
+  margin-top: 20px;
+}
+
+.tittle{
+  font-size: 27px;
+}

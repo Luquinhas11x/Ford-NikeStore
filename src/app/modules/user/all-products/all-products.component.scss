@@ -1,0 +1,70 @@
+.grid{
+  display: grid;
+  grid-template-columns: 1.2fr 0.2fr 6fr;
+  margin-top: 20px;
+
+}
+
+.all-content{
+  overflow-y: scroll;
+  height: 87.5vh;
+  width: 100%;
+  background-color: #F2F3F9;
+}
+
+.filters{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 50px;
+}
+
+.filters button{
+  background-color: transparent;
+  border: none;
+  margin: 10px 0px 10px 10px;
+  padding: 5px 10px 5px 10px;
+  font-size: 18px;
+  transition: .5s;
+  border-bottom-left-radius: 7px;
+}
+
+.filters button:hover{
+  background-color: rgba(97, 89, 89, 0.411);
+  cursor: pointer;
+}
+
+.sidemenu h3{
+  margin: 5px;
+}
+
+.menu-icon{
+  background-color: #F2F3F9;
+}
+
+.menu{
+  background-color: white;
+}
+
+.icon {
+  transform: rotate(90deg);
+}
+
+.icon:hover{
+  cursor: pointer;
+}
+
+.height{
+  width: 199vh;
+  padding-left: 50px;
+}
+
+.products-list{
+  display: flex;
+ flex-wrap: wrap;
+}
+
+.hide-menu:hover{
+  cursor: pointer;
+}

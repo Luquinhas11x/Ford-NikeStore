@@ -1,0 +1,57 @@
+.form{
+    // margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.info{
+    margin: 15px;
+}
+
+.all-form{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-logo{
+    height: 15px;
+}
+
+.text{
+    padding: 20px; 
+}
+
+.input-size{
+    width: 150%;
+}
+
+.price-category{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-button{
+    margin-top: 10px;
+    padding: 10px 130px 10px 130px;
+    border-radius: 7px;
+    background-color: black;
+    color: white;
+    transition: .5s;
+}
+
+.submit-button:hover{
+    cursor: pointer;
+}
+
+.invalid{
+    background-color: rgba(0, 0, 0, 0.137);
+    color: rgba(0, 0, 0, 0.438);
+    border: none;
+}

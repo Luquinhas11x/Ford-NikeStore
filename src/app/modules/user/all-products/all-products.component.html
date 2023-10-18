@@ -1,0 +1,30 @@
+<div class="grid">
+  <div class="menu" *ngIf="toDisplay">
+    <nav class="sidemenu"  >
+      <h3>Menu</h3>
+      <div class="filters">
+        <button (click)="showAll()">todos produtos</button>
+        <button (click)="filterAcessories()">acessórios</button>
+        <button (click)="filterShoes()">tênis</button>
+        <button (click)="filterClothes()">roupas</button>
+        <!-- <i class="fa-solid fa-cart-shopping" (click)="visibleSidebar2 = true"></i> -->
+      </div>
+    </nav>
+  </div>
+  <div class=" menu-icon">
+    <div *ngIf="toDisplay == false">
+      <i class="fa-solid fa-bars hide-menu" pTooltip="clique para ver menu" (click)="toggleData()"></i>
+    </div>
+    <div *ngIf="toDisplay == true">
+      <i class="fa-solid fa-bars icon" pTooltip="clique fechar o menu" (click)="toggleData()"></i>
+    </div>
+    <!-- <i class="fa-solid fa-bars" [ngClass]="{'icon': toDisplay == true}" (click)="visibleSidebar1 = true"></i> -->
+  </div>
+  <div class="all-content" [ngClass]="{'height': toDisplay == false}">
+    <div>
+      <app-product class="products-list" [products]="products" [cart]="cart"></app-product>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

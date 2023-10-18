@@ -1,0 +1,37 @@
+<p-toast></p-toast>
+<div class="all-form">
+  <img class="register-logo" src="../assets/images/nike logo.png" alt="">
+  <h2 class="text">SUA CONTA PARA TUDO DA NIKE</h2>
+  <form class="form" [formGroup]="productForm">
+    <div class="info">
+      <span class="p-float-label">
+        <input class="input-size" id="name" type="text" formControlName="name" pInputText>
+        <label for="name">Nome do produto:</label>
+      </span>
+    </div>
+    <div class="info">
+      <span class="p-float-label">
+        <input class="input-size" id="img" type="text" formControlName="img" pInputText>
+        <label for="img">Imagem do produto:</label>
+      </span>
+    </div>
+    <div class="price-category">
+      <div class="info">
+        <span class="p-float-label">
+          <input id="price" type="number" step="0.10" id="price" formControlName="price" pInputText>
+          <label for="price">Preço do produto:</label>
+        </span>
+      </div>
+      <div class="info">
+        <p>Categoria:</p>
+        <input type="radio" id="acessories" formControlName="category" value="acessories">
+        <label for="acessories">Acessórios</label><br>
+        <input type="radio" id="clothes" formControlName="category" value="clothes">
+        <label for="clothes">Roupas</label><br>
+        <input type="radio" id="shoes" formControlName="category" value="shoes">
+        <label for="shoes">Tênis</label><br>
+      </div>
+    </div>
+  </form>
+  <button class="submit-button" [ngClass]="{'invalid': productForm.valid == false}" type="submit" (click)="submitProduct()" [disabled]="!productForm.valid">cadastrar</button>
+</div>

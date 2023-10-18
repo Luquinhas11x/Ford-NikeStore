@@ -1,0 +1,43 @@
+<p-toast></p-toast>
+<div class="all">
+  <!-- <i class="fa-solid fa-cart-shopping cart-icon" (click)="visibleSidebar2 = true"></i> -->
+  <div class="all-products">
+    <div class="list" *ngFor="let product of products">
+      <div class="product">
+        <img (click)="showModalDialog(product)" [src]="product.img">
+        <h2>{{ product.name }}</h2>
+        <div class="price-delet">
+          <h2>{{ product.price | currency : 'BRL' }}</h2>
+          <i class="fa-solid fa-trash-can delet" (click)="delet(product.id, product)"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div *ngIf="cartProduct">
+  <p-dialog header={{cartProduct.name}} [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+    [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div class="dialog-product">
+      <img [src]="cartProduct.img" alt="">
+      <div class="dialog-price">
+        <h3>{{ cartProduct.price | currency : 'BRL' }}</h3>
+        <div class="p-field p-col-12 p-md-3">
+          <p-inputNumber [min]="1" [(ngModel)]="cartProduct.quantity" [showButtons]="true" buttonLayout="horizontal"
+            inputId="horizontal" spinnerMode="horizontal" decrementButtonClass="p-button-danger"
+            incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus">
+          </p-inputNumber>
+        </div>
+      </div>
+    </div>
+    <ng-template pTemplate="footer">
+      <p-button (click)="displayModal=false; addToCart(cartProduct)" label="adiconar ao carrinho"
+        class="p-button-text"></p-button>
+      <!-- <p-button icon="pi pi-times" (click)="displayModal=false" label="No"></p-button> -->
+    </ng-template>
+  </p-dialog>
+</div>
+
+<p-confirmDialog [transitionOptions]="'300ms'" [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>

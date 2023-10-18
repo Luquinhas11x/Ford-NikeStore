@@ -1,0 +1,59 @@
+<p-toast></p-toast>
+<div class="header">
+  <div class="nike-button">
+    <img class="nike-img" src="../assets/images/nike logo preto.png" alt="">
+  </div>
+  <div class="search-market">
+    <div class="search-input">
+      <input [(ngModel)]="search" (ngModelChange)="changeSearchValue()" class="input-field" type="text"
+        placeholder="Produto...">
+      <div class="icons">
+        <div class="icon search"><i class="fa-solid fa-magnifying-glass "></i></div>
+        <div class="icon cancel"><i class="fa-solid fa-xmark" (click)="clean()"></i></div>
+      </div>
+    </div>
+    <div class="icon-quantity">
+      <i class="fa-solid fa-bag-shopping cart-icon" pTooltip="clique para ver seu carrinho" tooltipPosition="bottom"
+        (click)="cartProduct()"></i>
+      <div class="total" *ngIf="cart.length != 0">
+        {{ totalCart }}
+      </div>
+    </div>
+  </div>
+  <div class="links">
+    <a class="border-right" routerLink="registration">cadastro</a>
+    <a class="border-left" routerLink="user/all-products">mercado</a>
+  </div>
+</div>
+
+<p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000">
+  <h1 class="tittle" style="font-weight:normal">Seu carrinho ({{ totalCart }} itens)</h1>
+  <div *ngIf="cart.length != 0">
+    <div *ngFor=" let cartProduct of cart">
+      <div class="cart-products">
+        <h3>{{ cartProduct.name }}</h3>
+        <div class="price-quantity">
+          <h3>{{ cartProduct.price | currency : 'BRL' }}</h3>
+          <h4>(X{{ cartProduct.quantity }})</h4>
+        </div>
+        <h5>{{ cartProduct.price * cartProduct.quantity | currency : 'BRL' }}</h5>
+        <i class="fa-solid fa-xmark cancel" (click)="remove(cartProduct.id)"></i>
+      </div>
+    </div>
+    <p class="total-price">Total: {{ total | currency : 'BRL' }} </p>
+    <div class="buttons">
+      <p-button type="button" (click)="visibleSidebar2 = false" label="finalizar compra" styleClass="p-button-success">
+      </p-button>
+      <p-button type="button" (click)="visibleSidebar2 = false; cleanCart()" label="limpar o carrinho" styleClass="p-button-secondary">
+      </p-button>
+    </div>
+  </div>
+  <div *ngIf="cart.length == 0" class="empty-cart">
+    <h3>SEU CARRINHO ESTÁ VAZIO</h3>
+    <p>Navegue pelas categorias da loja ou faça uma busca pelo seu produto.</p>
+    <p-button type="button" (click)="visibleSidebar2 = false;" label="continuar comprando" styleClass="p-button-secondary">
+    </p-button>
+  </div>
+</p-sidebar>
+
+<router-outlet></router-outlet>
